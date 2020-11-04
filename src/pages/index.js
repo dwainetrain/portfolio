@@ -4,8 +4,6 @@ import { Helmet } from "react-helmet";
 import Layout from "components/Layout";
 import Container from "components/Container";
 
-import img_gatsby from "assets/images/gatsby-astronaut.png";
-
 // GraphCMS Connection
 import { graphql, useStaticQuery, Link } from "gatsby";
 
@@ -18,6 +16,28 @@ const pageQuery = graphql`
         slug
         body
       }
+      siteSettings {
+        id
+        profileImage {
+          id
+          url
+          width
+          height
+        }
+        subheading
+        siteTitle
+      }
+      page(where: {slug: "about-me"}) {
+        title
+        body
+      }
+      projects {
+        title
+        tags {
+          id
+          name
+        }
+      }
     }
   }
 `;
@@ -27,27 +47,47 @@ const IndexPage = () => {
     gcms: { pages },
   } = useStaticQuery(pageQuery);
 
+  const {
+    gcms: { siteSettings: [{siteTitle, subheading, profileImage:{url}}] },
+  } = useStaticQuery(pageQuery);
+
+  const {
+    gcms: { page: {title, body} },
+  } = useStaticQuery(pageQuery);
+
+  const {
+    gcms: { projects },
+  } = useStaticQuery(pageQuery);
+
   return (
     <Layout pageName="home">
       <Helmet>
-        <title>Home Page</title>
+        <title>Title</title>
       </Helmet>
       <Container>
         <p className="gatsby-astronaut">
-          <img src={img_gatsby} alt="Build with Gatsby!" />
+          <img src={url} alt="Portrait of Dwaine Best" />
         </p>
         <p>Testing GraphCMS Conntection:</p>
         <div>
-          {pages.map(({slug, ...pages}) => (
+          {pages.map(({ slug, ...pages }) => (
             <Link key={slug} to={`/pages/${slug}`}>
               {pages.title}
             </Link>
           ))}
         </div>
-        <h1>Gatsby Sass Starter</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <h2>Still Getting Started?</h2>
+        <h1>{siteTitle}</h1>
+
+        <p>Projects:</p>
+        {projects.map((project) => (
+          <Link key={project.id} to={`/projects/`}>
+          {project.title}
+        </Link>
+        ))}
+
+        <p>{subheading}</p>
+        <p>{title}</p>
+        <h2>{body}</h2>
         <p>Run the following in your terminal!</p>
         <pre>
           <code>

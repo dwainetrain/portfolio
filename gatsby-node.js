@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }
   `);
 
+
   pages.forEach(({ id, slug }) =>
     createPage({
       path: `/pages/${slug}`,
