@@ -1,15 +1,13 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
-import Container from 'components/Container';
+import Container from "components/Container";
 
-const Header = () => {
+const Header = ({ settings: { siteTitle } }) => {
   return (
     <header>
       <Container>
-        <p>
-          My Gatsby Site
-        </p>
+        <p>{siteTitle}</p>
         <ul>
           <li>
             <Link to="/">Home</Link>

@@ -4,11 +4,16 @@ import { Helmet } from 'react-helmet';
 
 import 'assets/stylesheets/application.scss';
 
+// Hook with graphql query for site settings stored in GraphCMS
+import useSiteSettings from '../hooks/use-siteSettings'
+
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 const Layout = ({ children, pageName }) => {
 
+  const settings = useSiteSettings();
+ 
   let className = '';
 
   if ( pageName ) {
@@ -18,10 +23,10 @@ const Layout = ({ children, pageName }) => {
   return (
     <>
       <Helmet bodyAttributes={{ class: className}}>
-        <title>Gatsby Site</title>
+        <title>{settings.siteTitle}</title>
       </Helmet>
       <div className="wrapper">
-        <Header />
+        <Header settings={settings}/>
         <main>{ children }</main>
         <Footer />
       </div>
