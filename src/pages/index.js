@@ -4,6 +4,11 @@ import { Helmet } from "react-helmet";
 import Layout from "components/Layout";
 import Container from "components/Container";
 
+import AboutMe from "components/AboutMe";
+import Projects from "components/Projects";
+import Resume from 'components/Resume'
+import BrewerySection from 'components/BrewerySection'
+
 // GraphCMS Connection
 import { graphql, useStaticQuery, Link } from "gatsby";
 
@@ -15,6 +20,7 @@ const pageQuery = graphql`
         title
         slug
         body
+        description
       }
       siteSettings {
         id
@@ -26,10 +32,6 @@ const pageQuery = graphql`
         }
         subheading
         siteTitle
-      }
-      page(where: {slug: "about-me"}) {
-        title
-        body
       }
       projects {
         title
@@ -44,29 +46,19 @@ const pageQuery = graphql`
 
 const IndexPage = () => {
   const {
-    gcms: { pages },
+    gcms: { pages, siteSettings, projects },
   } = useStaticQuery(pageQuery);
 
-  const {
-    gcms: { siteSettings: [{siteTitle, subheading, profileImage:{url}}] },
-  } = useStaticQuery(pageQuery);
-
-  const {
-    gcms: { page: {title, body} },
-  } = useStaticQuery(pageQuery);
-
-  const {
-    gcms: { projects },
-  } = useStaticQuery(pageQuery);
+  console.log(pages.filter((page) => page.slug === "the-brewery")[0]);
 
   return (
     <Layout pageName="home">
       <Helmet>
-        <title>Title</title>
+        <title>{siteSettings.siteTitle}</title>
       </Helmet>
       <Container>
         <p className="gatsby-astronaut">
-          <img src={url} alt="Portrait of Dwaine Best" />
+          <img src={siteSettings[0].profileImage.url} alt="Portrait of Dwaine Best" />
         </p>
         <p>Testing GraphCMS Conntection:</p>
         <div>
@@ -76,18 +68,23 @@ const IndexPage = () => {
             </Link>
           ))}
         </div>
-        <h1>{siteTitle}</h1>
+        <h1>{siteSettings.siteTitle}</h1>
+        <h2>{siteSettings.subheading}</h2>
 
         <p>Projects:</p>
-        {projects.map((project) => (
-          <Link key={project.id} to={`/projects/`}>
-          {project.title}
-        </Link>
-        ))}
+        
+        <Projects projects={projects}/>
 
-        <p>{subheading}</p>
-        <p>{title}</p>
-        <h2>{body}</h2>
+        <Resume pageInfo={pages.filter((page) => page.slug === "resume")[0]} />
+        
+        <AboutMe
+          pageInfo={pages.filter((page) => page.slug === "about-me")[0]}
+        />
+
+        <BrewerySection pageInfo={pages.filter((page) => page.slug === "the-brewery")[0]}/>
+
+
+        <h2>placeholder</h2>
         <p>Run the following in your terminal!</p>
         <pre>
           <code>

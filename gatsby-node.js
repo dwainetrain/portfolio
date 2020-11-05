@@ -9,6 +9,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         pages(stage: PUBLISHED) {
           id
           slug
+          description
         }
       }
     }
