@@ -34,7 +34,9 @@ const pageQuery = graphql`
         siteTitle
       }
       projects {
+        id
         title
+        slug
         tags {
           id
           name
@@ -48,8 +50,6 @@ const IndexPage = () => {
   const {
     gcms: { pages, siteSettings, projects },
   } = useStaticQuery(pageQuery);
-
-  console.log(pages.filter((page) => page.slug === "the-brewery")[0]);
 
   return (
     <Layout pageName="home">

@@ -9,6 +9,7 @@ import useSiteSettings from '../hooks/use-siteSettings'
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Nav from 'components/Nav'
 
 const Layout = ({ children, pageName }) => {
 
@@ -27,6 +28,7 @@ const Layout = ({ children, pageName }) => {
       </Helmet>
       <div className="wrapper">
         <Header settings={settings}/>
+        <Nav />
         <main>{ children }</main>
         <Footer />
       </div>
