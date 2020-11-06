@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 const Projects = ({ projects }) => {
   console.log(projects);
   return (
-    <>
+    <div id="projects">
       <h1>Projects</h1>
       {projects.map((project) => (
         <Link key={project.id} to={`/projects/${project.slug}`}>
@@ -15,7 +15,7 @@ const Projects = ({ projects }) => {
         </Link>
       ))}
       <Link to={`/projects/`}>Explore More in the Projects Archive</Link>
-    </>
+    </div>
   );
 };
 
