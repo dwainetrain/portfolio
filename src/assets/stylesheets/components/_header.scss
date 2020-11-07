@@ -1,8 +1,5 @@
 header {
-
   width: 100%;
-  color: white;
-  background-color: rebeccapurple;
 
   .container {
     display: flex;
@@ -23,15 +20,10 @@ header {
 
   a {
     display: block;
-    color: white;
-    opacity: .8;
-    padding: 0 .5em;
+    padding: 0 0.5em;
   }
 
   p {
-    font-size: 2em;
-    font-weight: bold;
     margin: 0;
   }
-
 }

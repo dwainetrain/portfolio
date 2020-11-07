@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 export const Body = () => {
     return(
-        <div>
+        <div className="body">
             <Link to="/">Everything will be contained here!</Link>
         </div>
     )

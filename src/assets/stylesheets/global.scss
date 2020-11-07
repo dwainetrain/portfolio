@@ -1,3 +1,19 @@
-.body {
-  background-color: red;
+body {
+  background: rgb(250, 252, 253);
+  background: linear-gradient(
+    0deg,
+    rgba(250, 252, 253, 1) 0%,
+    rgba(208, 218, 224, 1) 100%
+  );
+}
+
+.wrapper {
+  // background: rgb(250, 252, 253);
+  background: linear-gradient(
+    0deg,
+    rgba(250, 252, 253, 1) 15%,
+    rgba(208, 218, 224, 1) 100%
+  );
+
+  max-width: 900px;
 }
