@@ -9,6 +9,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         pages(stage: PUBLISHED) {
           id
           slug
+          title
           description
         }
         projects(stage: PUBLISHED) {
@@ -30,15 +31,15 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
         articles(stage: PUBLISHED) {
           id
-          slug
           title
+          slug
           body
         }
       }
     }
   `);
 
-  console.log('Node projects: ', pages)
+  console.log('Node articles: ', articles)
 
   pages.forEach(({ id, slug }) =>
     createPage({
@@ -63,7 +64,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   articles.forEach(({ id, slug }) =>
     createPage({
       path: `/articles/${slug}`,
-      component: require.resolve("./src/templates/Page.js"),
+      component: require.resolve("./src/templates/Article.js"),
       context: {
         id,
       },
@@ -73,7 +74,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   brews.forEach(({ id, slug }) =>
     createPage({
       path: `/brews/${slug}`,
-      component: require.resolve("./src/templates/Page.js"),
+      component: require.resolve("./src/templates/Brew.js"),
       context: {
         id,
       },

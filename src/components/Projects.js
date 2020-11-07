@@ -5,7 +5,6 @@ import React from "react";
 import { Link } from "gatsby";
 
 const Projects = ({ projects }) => {
-  console.log(projects);
   return (
     <div id="projects">
       <h1>Projects</h1>
