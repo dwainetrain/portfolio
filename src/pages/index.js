@@ -8,6 +8,7 @@ import AboutMe from "components/AboutMe";
 import Projects from "components/Projects";
 import Resume from 'components/Resume'
 import BrewerySection from 'components/BrewerySection'
+import Body from 'components/Body'
 
 // GraphCMS Connection
 import { graphql, useStaticQuery, Link } from "gatsby";
@@ -71,7 +72,7 @@ const IndexPage = () => {
         <h1>{siteSettings.siteTitle}</h1>
         <h2>{siteSettings.subheading}</h2>
 
-        <p>Projects:</p>
+        <Body />
         
         <Projects projects={projects}/>
 
