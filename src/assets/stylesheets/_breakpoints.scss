@@ -3,24 +3,16 @@ BREAKPOINTS
 *********************/
 
 @mixin breakpoint($point) {
-  @if $point == desktop {
-    @media (min-width: 70em) {
-      @content;
-    }
-  } @else if $point == laptop {
-    @media (min-width: 64em) {
+  @if $point == sm {
+    @media only screen and (min-width: 600px) {
       @content;
     }
   } @else if $point == md {
-    @media (min-width: 50em) {
+    @media only screen and (min-width: 840px) {
       @content;
     }
-  } @else if $point == phablet {
-    @media (min-width: 37.5em) {
-      @content;
-    }
-  } @else if $point == mobileonly {
-    @media (max-width: 37.5em) {
+  } @else if $point == lg {
+    @media only screen and (min-width: 1280px) {
       @content;
     }
   }

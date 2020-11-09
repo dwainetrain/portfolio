@@ -12,9 +12,9 @@ body {
 
 .wrapper {
   min-height: 100vh;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  margin-bottom: 200px;
 }
 
 main {

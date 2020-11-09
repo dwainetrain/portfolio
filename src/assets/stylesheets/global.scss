@@ -1,8 +1,8 @@
 body {
-  background: rgb(250, 252, 253);
+  background: rgb(246, 248, 249);
   background: linear-gradient(
     0deg,
-    rgba(250, 252, 253, 1) 0%,
+    rgba(246, 248, 249, 1) 0%,
     rgba(208, 218, 224, 1) 100%
   );
 }
@@ -11,9 +11,10 @@ body {
   // background: rgb(250, 252, 253);
   background: linear-gradient(
     0deg,
-    rgba(250, 252, 253, 1) 15%,
+    rgba(250, 252, 253, 1) 5%,
     rgba(208, 218, 224, 1) 100%
   );
 
-  max-width: 900px;
+  width: 90vw;
+  max-width: 1180px;
 }

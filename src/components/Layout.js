@@ -30,8 +30,8 @@ const Layout = ({ children, pageName }) => {
         <Header settings={settings}/>
         <Nav />
         <main>{ children }</main>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 

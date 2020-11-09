@@ -1,5 +1,7 @@
-$gap-horizontal: 10px;
+//grid gap
+$gap-horizontal: 24px;
 $gap-vertical: $gap-horizontal;
+$grid-columns: 12;
 
 @mixin grid {
   // fallback for IE
