@@ -4,35 +4,13 @@ import { Helmet } from "react-helmet";
 import Layout from "components/Layout";
 import Container from "components/Container";
 
-// GraphCMS Connection
-import { graphql, useStaticQuery } from "gatsby";
-
-const pageQuery = graphql`
-  {
-    gcms {
-      siteSettings {
-        id
-        profileImage {
-          id
-          url
-          width
-          height
-        }
-        subheading
-        siteTitle
-      }
-    }
-  }
-`;
-
+import useProjects from "../hooks/use-projects";
 
 const SecondPage = () => {
-  const {
-    gcms: { siteSettings },
-  } = useStaticQuery(pageQuery);
+  const projects = useProjects();
 
-  console.log(siteSettings);
-  
+  console.log("Projects:", projects);
+
   return (
     <Layout pageName="two">
       <Helmet>

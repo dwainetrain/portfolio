@@ -8,6 +8,7 @@ import AboutMe from "components/AboutMe";
 import Projects from "components/Projects";
 import Resume from 'components/Resume'
 import BrewerySection from 'components/BrewerySection'
+import Body from 'components/Body'
 
 // GraphCMS Connection
 import { graphql, useStaticQuery, Link } from "gatsby";
@@ -34,7 +35,9 @@ const pageQuery = graphql`
         siteTitle
       }
       projects {
+        id
         title
+        slug
         tags {
           id
           name
@@ -48,8 +51,6 @@ const IndexPage = () => {
   const {
     gcms: { pages, siteSettings, projects },
   } = useStaticQuery(pageQuery);
-
-  console.log(pages.filter((page) => page.slug === "the-brewery")[0]);
 
   return (
     <Layout pageName="home">
@@ -71,7 +72,7 @@ const IndexPage = () => {
         <h1>{siteSettings.siteTitle}</h1>
         <h2>{siteSettings.subheading}</h2>
 
-        <p>Projects:</p>
+        <Body />
         
         <Projects projects={projects}/>
 

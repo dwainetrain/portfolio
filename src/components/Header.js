@@ -3,19 +3,18 @@ import { Link } from "gatsby";
 
 import Container from "components/Container";
 
-const Header = ({ settings: { siteTitle } }) => {
+import Logo from 'components/Logo'
+
+const Header = ({ settings: { siteTitle, subheading } }) => {
   return (
     <header>
       <Container>
-        <p>{siteTitle}</p>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2/">Page 2</Link>
-          </li>
-        </ul>
+        <div className="logo">
+          <Link to="/">
+            <Logo />
+          </Link>
+        </div>
+        <div className="subheading">{subheading}</div>
       </Container>
     </header>
   );

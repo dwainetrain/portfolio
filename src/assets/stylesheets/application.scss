@@ -1,6 +1,9 @@
+@import "_breakpoints";
+@import "_typography";
+@import "_grids";
+@import "global";
 @import "components/__components";
 @import "pages/__pages";
-@import "_typography";
 
 body {
   padding: 0;
@@ -9,6 +12,7 @@ body {
 
 .wrapper {
   min-height: 100vh;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
