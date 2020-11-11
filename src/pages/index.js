@@ -93,6 +93,9 @@ const IndexPage = () => {
             https://github.com/colbyfayock/gatsby-starter-sass
           </code>
         </pre>
+        <ul>
+          <li>Just a list item to test. Can you see me?</li>
+        </ul>
       </Container>
     </Layout>
   );

@@ -5,7 +5,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Nav = () => {
   return (
-    <ul>
+    <ul className="nav">
       <li><AnchorLink to="/#projects" title="Projects">Projects</AnchorLink></li>
       <li><AnchorLink to="/#articles" title="Articles">Articles</AnchorLink></li>
       <li><AnchorLink to="/#resume" title="My Resume">Resume</AnchorLink></li>

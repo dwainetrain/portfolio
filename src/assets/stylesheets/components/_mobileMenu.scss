@@ -1,0 +1,6 @@
+.mobile-menu {
+  visibility: visible;
+  @include breakpoint(lg) {
+    visibility: hidden;
+  }
+}
