@@ -53,11 +53,12 @@ html {
 
 body {
   padding: 2% 5%;
-  font-family: Georgia, serif;
+  font-family: var(--font-primary);
   line-height: 1.4;
 }
 
 h1 {
+  font-family: var(--font-secondary);
   font-weight: normal;
   max-width: 10em;
   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
@@ -66,6 +67,20 @@ h1 {
     $max_width,
     $mod_1 * $mod_1 * $mod_1 * $min_font,
     $mod_2 * $mod_2 * $mod_2 * $min_font
+  );
+}
+
+h2,
+.logo {
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  max-width: 10em;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $min_font,
+    $mod_2 * $min_font
   );
 }
 

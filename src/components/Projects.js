@@ -7,11 +7,11 @@ import { Link } from "gatsby";
 const Projects = ({ projects }) => {
   return (
     <div id="projects">
-      <h2 class="section-header">Projects</h2>
+      <h2 className="section-header">Projects</h2>
       <ul>
         {projects.map((project) => (
-          <li>
-            <Link key={project.id} to={`/projects/${project.slug}`}>
+          <li key={project.id}>
+            <Link  to={`/projects/${project.slug}`}>
               {project.title}
             </Link>
           </li>

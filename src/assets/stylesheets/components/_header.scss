@@ -4,36 +4,74 @@ header {
   position: sticky;
   top: 0;
 
-  .container {
-    display: block;
+  .logo {
+    font-family: var(--font-secondary);
+  }
+
+  .links {
     @include breakpoint(sm) {
       padding: 0;
     }
     @include breakpoint(md) {
       padding: 2em 1em 1em 1em;
     }
+
     @include breakpoint(lg) {
-      padding: 2.5em 3em 1em 3em;
+      padding: 2.5em 1em 1em 3em;
+      transition-duration: 0.4s;
       display: flex;
     }
+
     align-items: baseline;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     // line-height: 0;
     // height: 6em;
+
+    &.smaller {
+      padding: 0.5em 1em 0.5em 3em;
+      transition-duration: 0.4s;
+      transition-delay: 0.1s;
+    }
   }
 
   a {
     display: block;
     text-decoration: none;
+    color: $thunder;
   }
 
   .logo {
-    margin: 0;
+    margin-right: 3em;
   }
 
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    @include breakpoint(lg) {
+      border: 0;
+    }
+  }
+
+  // .mobile-menu {
+  //   visibility: visible;
+  //   @include breakpoint(lg) {
+  //     visibility: hidden;
+  //   }
+  // }
+
   .subheading {
+    font-family: var(--font-primary);
     margin: 0;
     font-weight: 200;
+    // max-width: 10em;
+    font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+    @include fluid-type(
+      $min_width,
+      $max_width,
+      $mod_1 * $min_font,
+      $mod_1 * $min_font
+    );
   }
 
   background-image: rgb(250, 252, 253);
@@ -42,9 +80,12 @@ header {
     rgba(250, 252, 253, 1) 5%,
     rgba(208, 218, 224, 1) 100%
   );
-  // background-image: url("../images/gradient.png");
   background-repeat: repeat-x;
   background-position: 0px 0px;
   background-color: #ffffff;
-  background-size: 100% 1800px;
+}
+
+.header {
+  display: flex;
+  border: 1px solid $sanguine-brown;
 }

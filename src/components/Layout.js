@@ -10,10 +10,8 @@ import useSiteSettings from "../hooks/use-siteSettings";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import Nav from "components/Nav";
-import MobileMenu from "./MobileMenu";
 
 const Layout = ({ children, pageName }) => {
-
   const settings = useSiteSettings();
 
   let className = "";
@@ -27,14 +25,12 @@ const Layout = ({ children, pageName }) => {
       <Helmet bodyAttributes={{ class: className }}>
         <title>{settings.siteTitle}</title>
       </Helmet>
-      <div
-        className="wrapper"
-        
-      >
+      <div className="wrapper">
+        {" "}
         <Header settings={settings} />
         <div className="content">
           <Nav />
-          <MobileMenu />
+
           <main>{children}</main>
         </div>
       </div>
