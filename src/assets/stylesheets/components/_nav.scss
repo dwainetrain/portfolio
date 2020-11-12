@@ -1,0 +1,28 @@
+.nav {
+  visibility: hidden;
+  @include breakpoint(lg) {
+    visibility: visible;
+  }
+
+  position: fixed;
+  width: 10em;
+
+  li {
+    list-style: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 200;
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $sanguine-brown;
+  }
+}

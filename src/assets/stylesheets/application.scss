@@ -1,5 +1,7 @@
+@import "_reset";
 @import "_breakpoints";
 @import "_typography";
+@import "_colors";
 @import "_grids";
 @import "global";
 @import "components/__components";
@@ -21,7 +23,6 @@ main {
   display: flex;
   text-align: center;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
   padding: 2em 0;
+  width: 100%;
 }

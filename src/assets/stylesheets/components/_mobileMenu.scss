@@ -1,0 +1,63 @@
+.mobile-menu {
+  visibility: visible;
+  @include breakpoint(lg) {
+    visibility: hidden;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 15em;
+    height: 100vh;
+    padding: 1em;
+    background-color: $black-squeeze;
+    z-index: 100;
+  }
+
+  .active {
+    right: 0;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $gray-border;
+  }
+
+  h2 {
+    font-weight: 300;
+    color: $blue-bayoux;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+
+  ul li {
+    list-style: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 200;
+    margin-bottom: 0.5em;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $gray-border;
+    z-index: 1;
+  }
+
+  a:hover {
+    color: $sanguine-brown;
+  }
+}

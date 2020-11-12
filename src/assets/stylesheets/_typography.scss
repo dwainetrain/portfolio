@@ -8,157 +8,264 @@ Typography
 // Nunito from Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 
+/* Adapted From this codepen https://codepen.io/matejlatin/pen/dEXQmG */
+
 :root {
   --font-primary: nunito, sans-serif;
   --font-secondary: gill-sans-nova, serif;
-
-  /* set base values */
-  --text-base-size: 1em;
-  --text-scale-ratio: 1.2;
-
-  /* type scale */
-  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
-  --text-sm: calc(1em / var(--text-scale-ratio));
-  --text-md: calc(1em * var(--text-scale-ratio));
-  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xl: calc(
-    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio)
-  );
-  --text-xxl: calc(
-    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) * var(--text-scale-ratio)
-  );
-  --text-xxxl: calc(
-    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio)
-  );
-
-  /* line-height */
-  --heading-line-height: 1.2;
-  --body-line-height: 1.4;
 }
 
-@include breakpoint(md) {
-  :root {
-    --text-base-size: 1.25em;
-    --text-scale-ratio: 1.25;
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
   }
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
 body {
-  font-size: var(--text-base-size);
+  padding: 2% 5%;
   font-family: var(--font-primary);
-  color: var(--color-text);
+  line-height: 1.4;
 }
 
-h1,
-h2,
-h3,
-h4,
-form legend {
-  color: var(--color-text-heading);
-  margin-bottom: var(--space-xxs);
-  line-height: var(--heading-line-height);
+h1 {
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  max-width: 10em;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $mod_2 * $min_font
+  );
 }
 
-/* text size */
-.text--xxxl {
-  font-size: var(--text-xxxl);
+h2 {
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  max-width: 10em;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $min_font
+  );
 }
 
-h1,
-.text--xxl {
-  font-size: var(--text-xxl);
+// This is where you need to practice extends...
+.logo {
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  max-width: 10em;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $min_font,
+    $mod_1 * $mod_2 * $min_font
+  );
 }
 
-h2,
-.text--xl {
-  font-size: var(--text-xl);
+.meta {
+  font-style: italic;
 }
 
-h3,
-.text--lg {
-  font-size: var(--text-lg);
-}
-
-h4,
-.text--md {
-  font-size: var(--text-md);
-}
-
-.text--sm,
-small {
-  font-size: var(--text-sm);
-}
-
-.text--xs {
-  font-size: var(--text-xs);
+.category {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 p {
-  line-height: var(--body-line-height);
+  max-width: 25em;
 }
 
-a {
-  color: var(--color-link);
+/* End of example */
 
-  &:visited {
-    color: var(--color-link-visited);
-  }
-}
+// Old Typography
+// :root {
+// /* set base values */
+// --text-base-size: 1em;
+// --text-scale-ratio: 1.2;
 
-b,
-strong {
-  font-weight: bold;
-}
+// /* type scale */
+// --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+// --text-sm: calc(1em / var(--text-scale-ratio));
+// --text-md: calc(1em * var(--text-scale-ratio));
+// --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+// --text-xl: calc(
+//   1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+//     var(--text-scale-ratio)
+// );
+// --text-xxl: calc(
+//   1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+//     var(--text-scale-ratio) * var(--text-scale-ratio)
+// );
+// --text-xxxl: calc(
+//   1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+//     var(--text-scale-ratio) * var(--text-scale-ratio) *
+//     var(--text-scale-ratio)
+// );
 
-.text-container {
-  h2,
-  h3,
-  h4 {
-    margin-top: var(--space-sm);
-  }
+// /* line-height */
+// --heading-line-height: 1.2;
+// --body-line-height: 1.4;
+// }
 
-  ul,
-  ol,
-  p {
-    margin-bottom: var(--space-md);
-  }
+// @include breakpoint(md) {
+//   :root {
+//     --text-base-size: 1.25em;
+//     --text-scale-ratio: 1.25;
+//   }
+// }
 
-  ul,
-  ol {
-    list-style-position: outside;
-    padding-left: 24px;
-  }
+// body {
+//   font-size: var(--text-base-size);
+//   font-family: var(--font-primary);
+//   color: var(--color-text);
+// }
 
-  ul {
-    list-style-type: disc;
-  }
+// h1,
+// h2,
+// h3,
+// h4,
+// form legend {
+//   color: var(--color-text-heading);
+//   margin-bottom: var(--space-xxs);
+//   line-height: var(--heading-line-height);
+// }
 
-  ol {
-    list-style-type: decimal;
-  }
+// /* text size */
+// .text--xxxl {
+//   font-size: var(--text-xxxl);
+// }
 
-  ul li,
-  ol li {
-    line-height: var(--body-line-height);
-  }
+// h1,
+// .text--xxl {
+//   font-size: var(--text-xxl);
+// }
 
-  em {
-    font-style: italic;
-  }
+// h2,
+// .text--xl {
+//   font-size: var(--text-xl);
+// }
 
-  u {
-    text-decoration: underline;
-  }
-}
+// h3,
+// .text--lg {
+//   font-size: var(--text-lg);
+// }
 
-/* utility classes */
-.truncate {
-  // truncate text if it exceeds parent
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+// h4,
+// .text--md {
+//   font-size: var(--text-md);
+// }
+
+// .text--sm,
+// small {
+//   font-size: var(--text-sm);
+// }
+
+// .text--xs {
+//   font-size: var(--text-xs);
+// }
+
+// p {
+//   line-height: var(--body-line-height);
+// }
+
+// a {
+//   color: var(--color-link);
+
+//   &:visited {
+//     color: var(--color-link-visited);
+//   }
+// }
+
+// b,
+// strong {
+//   font-weight: bold;
+// }
+
+// .text-container {
+//   h2,
+//   h3,
+//   h4 {
+//     margin-top: var(--space-sm);
+//   }
+
+//   ul,
+//   ol,
+//   p {
+//     margin-bottom: var(--space-md);
+//   }
+
+//   ul,
+//   ol {
+//     list-style-position: outside;
+//     padding-left: 24px;
+//   }
+
+//   ul {
+//     list-style-type: disc;
+//   }
+
+//   ol {
+//     list-style-type: decimal;
+//   }
+
+//   ul li,
+//   ol li {
+//     line-height: var(--body-line-height);
+//   }
+
+//   em {
+//     font-style: italic;
+//   }
+
+//   u {
+//     text-decoration: underline;
+//   }
+// }
+
+// /* utility classes */
+// .truncate {
+//   // truncate text if it exceeds parent
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
+
+//
+/* Adapted From this codepen https://codepen.io/matejlatin/pen/dEXQmG */
