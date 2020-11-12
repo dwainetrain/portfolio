@@ -70,7 +70,20 @@ h1 {
   );
 }
 
-h2,
+h2 {
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  max-width: 10em;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $min_font
+  );
+}
+
+// This is where you need to practice extends...
 .logo {
   font-family: var(--font-secondary);
   font-weight: normal;
@@ -79,8 +92,8 @@ h2,
   @include fluid-type(
     $min_width,
     $max_width,
-    $mod_1 * $min_font,
-    $mod_2 * $min_font
+    $mod_1 * $mod_1 * $min_font,
+    $mod_1 * $mod_2 * $min_font
   );
 }
 
