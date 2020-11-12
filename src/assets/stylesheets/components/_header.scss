@@ -23,7 +23,7 @@ header {
     }
 
     align-items: baseline;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid $gray-border;
     // line-height: 0;
     // height: 6em;
 
@@ -52,13 +52,6 @@ header {
       border: 0;
     }
   }
-
-  // .mobile-menu {
-  //   visibility: visible;
-  //   @include breakpoint(lg) {
-  //     visibility: hidden;
-  //   }
-  // }
 
   .subheading {
     font-family: var(--font-primary);
