@@ -16,6 +16,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^5.0.2",
     "sass-loader": "^10.0.5",
     "scroll-data-hook": "^1.0.4",
     "webpack": "^5.4.0"
