@@ -29,7 +29,7 @@ const Layout = ({ children, pageName }) => {
         {" "}
         <Header settings={settings} />
         <div className="content">
-          <Nav />
+        <Nav />
 
           <main>{children}</main>
         </div>

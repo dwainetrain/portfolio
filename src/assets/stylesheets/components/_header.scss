@@ -19,7 +19,8 @@ header {
     @include breakpoint(lg) {
       padding: 2.5em 1em 1em 3em;
       transition-duration: 0.4s;
-      display: flex;
+      display: grid;
+      grid-template-columns: 9em auto;
     }
 
     align-items: baseline;
@@ -38,10 +39,6 @@ header {
     display: block;
     text-decoration: none;
     color: $thunder;
-  }
-
-  .logo {
-    margin-right: 3em;
   }
 
   .heading {

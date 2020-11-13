@@ -3,7 +3,7 @@
 @import "_typography";
 @import "_colors";
 @import "_grids";
-@import "global";
+@import "_global";
 @import "components/__components";
 @import "pages/__pages";
 
@@ -21,8 +21,31 @@ body {
 
 main {
   display: flex;
-  text-align: center;
   flex-direction: column;
-  padding: 2em 0;
   width: 100%;
+}
+
+section {
+  border-bottom: 1px solid $gray-border;
+  // padding-bottom: 0.5em;
+}
+
+section:not(:first-child) {
+  padding-top: 1em;
+}
+
+.section-header {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  color: $tundora;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 9em 1fr;
+  justify-content: start;
+  margin: 1em 3em 1em 3em;
 }

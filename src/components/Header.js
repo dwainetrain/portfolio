@@ -13,6 +13,7 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
+    // Get scroll position and set height of wrapper
     window.addEventListener("scroll", resizeHeaderOnScroll);
     const wrapperHeight = document.querySelector(".wrapper").clientHeight;
     setHeight(wrapperHeight);
@@ -22,7 +23,7 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
   // Get width for Nav Breakpoint
   const handleResize = (e) => {
     setWidth(window.innerWidth);
-   };
+  };
 
   // For shrinking header
   const resizeHeaderOnScroll = () => {
