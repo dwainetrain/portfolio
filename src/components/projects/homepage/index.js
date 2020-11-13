@@ -8,9 +8,9 @@ const Projects = ({ projects }) => {
   return (
     <div id="projects">
       <h2 className="section-header">Projects</h2>
-      <ul className="listings">
+      <div className="listings">
         {projects.map((project) => (
-          <li key={project.id} className="listing">
+          <div key={project.id} className="listing">
             <Link to={`/projects/${project.slug}`}>{project.title}</Link>
             <div className="tags">
               {project.tags.map((tag, index) => {
@@ -19,9 +19,9 @@ const Projects = ({ projects }) => {
                   : `${tag.name}.`;
               })}
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       {/* <Link to={`/projects/`}>Explore More in the Projects Archive</Link> */}
     </div>
   );

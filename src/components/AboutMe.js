@@ -9,7 +9,6 @@ const AboutMe = ({pageInfo: { slug, title, body }}) => {
       <h1 className="section-header">{title}</h1>
       <p>Slug: {slug}</p>
       <ReactMarkdown source={body} />
-      <pre>{body}</pre>
     </div>
   );
 };

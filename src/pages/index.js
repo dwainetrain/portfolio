@@ -61,19 +61,19 @@ const IndexPage = () => {
           <section>
             <Projects projects={projects} />
           </section>
-
+          <hr />
           <section>
             <Resume
               pageInfo={pages.filter((page) => page.slug === "resume")[0]}
             />
           </section>
-
+          <hr />
           <section>
             <AboutMe
               pageInfo={pages.filter((page) => page.slug === "about-me")[0]}
             />
           </section>
-
+          <hr />
           <BrewerySection
             pageInfo={pages.filter((page) => page.slug === "the-brewery")[0]}
           />
