@@ -28,7 +28,7 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
   // For shrinking header
   const resizeHeaderOnScroll = () => {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop,
-      shrinkOn = 50,
+      shrinkOn = 0,
       headerEl = document.querySelector(".links");
 
     if (distanceY > shrinkOn) {
