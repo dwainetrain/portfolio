@@ -1,17 +1,16 @@
 #projects {
-  ul {
+  .listings {
     padding: 0;
     margin: 0;
   }
 
-  .listings {
-    margin-bottom: 1em;
-  }
-
   .listing {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    margin-bottom: 0.5em;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
 
     a {
       text-decoration: none;
@@ -19,7 +18,41 @@
       line-height: 1.3;
       color: $blue-bayoux;
       font-family: var(--font-secondary);
+
+      background-image: initial;
+      background-repeat: no-repeat;
+
+      background-position: initial;
+      transition: initial;
+      background-size: initial;
+
+      &:hover {
+        background-image: linear-gradient(
+          120deg,
+          $sanguine-brown 0%,
+          $sanguine-brown-faded 100%
+        );
+        background-repeat: no-repeat;
+
+        background-position: 0 88%;
+        transition: background-size 0.25s ease-in;
+        background-size: 100% 0.02em;
+        color: $sanguine-brown;
+
+        // &:after {
+        //   content: " > Case Study";
+        //   color: $gray-border;
+        //   font-size: 0.5em;
+        //   align-items: flex-start;
+        // }
+      }
     }
+
+    // a:hover {
+    //   text-decoration: underline;
+    //   color: $sanguine-brown;
+
+    // }
 
     .tags {
       font-weight: 200;

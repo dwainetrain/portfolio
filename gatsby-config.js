@@ -10,7 +10,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -100
+        // larger negative number adds more space at the top of the page
+        offset: -142
       }
     },
     {

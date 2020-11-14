@@ -6,6 +6,14 @@ header {
 
   .logo {
     font-family: var(--font-secondary);
+
+    a {
+      background-image: initial;
+      background-repeat: no-repeat;
+      background-position: initial;
+      transition: initial;
+      background-size: initial;
+    }
   }
 
   .links {
@@ -20,7 +28,7 @@ header {
       padding: 2.5em 1em 1em 3em;
       transition-duration: 0.4s;
       display: grid;
-      grid-template-columns: 9em auto;
+      grid-template-columns: 11em auto;
     }
 
     align-items: baseline;

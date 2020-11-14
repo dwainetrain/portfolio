@@ -4,7 +4,7 @@ const Resume = ({pageInfo: { slug, title, body }}) => {
     return(
         <div id="resume">
         <h1 className="section-header">{title}</h1>
-        <p>{body}</p>
+        <p><a href="/">{body}</a></p>
         </div>
     )
 }

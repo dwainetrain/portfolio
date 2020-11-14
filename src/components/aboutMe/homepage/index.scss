@@ -1,0 +1,10 @@
+#about-me {
+  p {
+    margin-bottom: 0.75em;
+  }
+
+  .chapter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
