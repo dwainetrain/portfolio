@@ -10,6 +10,7 @@ import useSiteSettings from "../hooks/use-siteSettings";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import Nav from "components/Nav";
+// import Portrait from "components/portrait/homepage"
 
 const Layout = ({ children, pageName }) => {
   const settings = useSiteSettings();
@@ -29,10 +30,10 @@ const Layout = ({ children, pageName }) => {
         {" "}
         <Header settings={settings} />
         <div className="content">
-        <Nav />
-
+          <Nav />
           <main>{children}</main>
         </div>
+        {/* <Portrait settings={settings}/> */}
       </div>
       <Footer />
     </>

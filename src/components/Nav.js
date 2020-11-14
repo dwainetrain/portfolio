@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Nav = () => {
@@ -13,11 +13,11 @@ const Nav = () => {
             Projects
           </AnchorLink>
         </li>
-        <li>
+        {/* <li>
           <AnchorLink to="/#articles" title="Articles">
             Articles
           </AnchorLink>
-        </li>
+        </li> */}
         <li>
           <AnchorLink to="/#resume" title="My Resume">
             Resume
@@ -28,11 +28,11 @@ const Nav = () => {
             About Me
           </AnchorLink>
         </li>
-        <li>
+        {/* <li>
           <Link to="/the-brewery/" title="The Idea Brewery">
             Brewery
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
