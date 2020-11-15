@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 // For the matching gradient effect between the header and the wrapper
 // Takes scroll position and uses it to calculate background-position of gradient.
 import { useScrollData } from "scroll-data-hook";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "../../MobileMenu";
 
 const Header = ({ settings: { siteTitle, subheading } }) => {
   // Get scroll position and wrapper height for gradient effect
@@ -13,7 +13,6 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", resizeHeaderOnScroll);
     const wrapperHeight = document.querySelector(".wrapper").clientHeight;
     setHeight(wrapperHeight);
     window.addEventListener("resize", handleResize);
@@ -22,19 +21,6 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
   // Get width for Nav Breakpoint
   const handleResize = (e) => {
     setWidth(window.innerWidth);
-   };
-
-  // For shrinking header
-  const resizeHeaderOnScroll = () => {
-    const distanceY = window.pageYOffset || document.documentElement.scrollTop,
-      shrinkOn = 50,
-      headerEl = document.querySelector(".links");
-
-    if (distanceY > shrinkOn) {
-      headerEl.classList.add("smaller");
-    } else {
-      headerEl.classList.remove("smaller");
-    }
   };
 
   return (

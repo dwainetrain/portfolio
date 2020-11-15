@@ -27,8 +27,7 @@ header {
     }
 
     @include breakpoint(lg) {
-      padding: 2.5em 1em 1em 3em;
-      transition-duration: 0.4s;
+      padding: 0.5em 1em 0.5em 3em;
       display: grid;
       grid-template-columns: 11em auto;
     }
@@ -37,12 +36,6 @@ header {
     border-bottom: 1px solid $gray-border;
     // line-height: 0;
     // height: 6em;
-
-    &.smaller {
-      padding: 0.5em 1em 0.5em 3em;
-      transition-duration: 0.4s;
-      transition-delay: 0.1s;
-    }
   }
 
   a {

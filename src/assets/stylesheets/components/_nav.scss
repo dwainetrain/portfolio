@@ -1,24 +1,38 @@
+.box {
+  width: 9em;
+}
+
 .nav {
   visibility: hidden;
   @include breakpoint(lg) {
     visibility: visible;
   }
 
-  position: fixed;
-  width: 10em;
+  position: fixed; // See link
+
+  top: 4em; //to make it stick to the top of the screen
+  height: 100vh; // make the height equal to 100 view height
+  // transition-duration: 0.4s;
+  // transition-delay: 0.1s;
 
   li {
     list-style: none;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-weight: 200;
+    font-weight: 300;
     margin-bottom: 0.5em;
+    color: $tundora;
   }
 
   a {
     text-decoration: none;
     color: inherit;
+    background-image: initial;
+    background-repeat: no-repeat;
+    background-position: initial;
+    transition: initial;
+    background-size: initial;
   }
 
   a:hover {

@@ -1,0 +1,63 @@
+body {
+  background: rgb(246, 248, 249);
+  background: linear-gradient(
+    0deg,
+    rgba(246, 248, 249, 1) 0%,
+    rgba(208, 218, 224, 1) 100%
+  );
+}
+
+.wrapper {
+  background-image: rgb(250, 252, 253);
+  background-image: linear-gradient(
+    0deg,
+    rgba(250, 252, 253, 1) 5%,
+    rgba(208, 218, 224, 1) 100%
+  );
+  background-repeat: repeat-x;
+  background-position: 0px 0px;
+  width: 95vw;
+  max-width: 1280px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+
+  background-image: linear-gradient(
+    90deg,
+    $gray-border,
+    rgba(123, 135, 142, 0)
+  );
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  color: $sanguine-brown;
+  font-family: var(--font-secondary);
+
+  background-image: linear-gradient(
+    120deg,
+    $sanguine-brown 0%,
+    $sanguine-brown-faded 100%
+  );
+  background-repeat: no-repeat;
+
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  background-size: 100% 0.04em;
+
+  &:hover {
+    color: $blue-bayoux;
+
+    // &:after {
+    //   content: " > Case Study";
+    //   color: $gray-border;
+    //   font-size: 0.5em;
+    //   align-items: flex-start;
+    // }
+  }
+}

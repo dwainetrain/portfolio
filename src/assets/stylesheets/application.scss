@@ -1,9 +1,9 @@
 @import "_reset";
 @import "_breakpoints";
-@import "_typography";
 @import "_colors";
+@import "_typography";
 @import "_grids";
-@import "global";
+@import "_global";
 @import "components/__components";
 @import "pages/__pages";
 
@@ -21,8 +21,32 @@ body {
 
 main {
   display: flex;
-  text-align: center;
   flex-direction: column;
-  padding: 2em 0;
   width: 100%;
+}
+
+section {
+  // border-bottom: 1px solid $gray-border;
+  padding-bottom: 0.75em;
+}
+
+section:not(:first-child) {
+  padding-top: 0.75em;
+}
+
+.section-header {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  color: $tundora;
+  margin-bottom: 0.25em;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 11em 1fr;
+  justify-content: start;
+  margin: 1em 3em 1em 3em;
 }

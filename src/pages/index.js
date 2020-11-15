@@ -4,14 +4,13 @@ import { Helmet } from "react-helmet";
 import Layout from "components/Layout";
 import Container from "components/Container";
 
-import AboutMe from "components/AboutMe";
-import Projects from "components/Projects";
-import Resume from 'components/Resume'
-import BrewerySection from 'components/BrewerySection'
-import Body from 'components/Body'
+import AboutMe from "components/aboutMe/homepage/";
+import Projects from "components/projects/homepage";
+import Resume from "components/Resume";
+// import BrewerySection from "components/BrewerySection";
 
 // GraphCMS Connection
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 const pageQuery = graphql`
   {
@@ -22,6 +21,12 @@ const pageQuery = graphql`
         slug
         body
         description
+        images {
+          id
+          height
+          width
+          url
+        }
       }
       siteSettings {
         id
@@ -58,44 +63,28 @@ const IndexPage = () => {
         <title>{siteSettings.siteTitle}</title>
       </Helmet>
       <Container>
-        <p className="gatsby-astronaut">
-          <img src={siteSettings[0].profileImage.url} alt="Portrait of Dwaine Best" />
-        </p>
-        <p>Testing GraphCMS Conntection:</p>
-        <div>
-          {pages.map(({ slug, ...pages }) => (
-            <Link key={slug} to={`/pages/${slug}`}>
-              {pages.title}
-            </Link>
-          ))}
+        <div className="sections">
+          <section>
+            <Projects projects={projects} />
+          </section>
+          <hr />
+          <section>
+            <Resume
+              pageInfo={pages.filter((page) => page.slug === "resume")[0]}
+            />
+          </section>
+          <hr />
+          <section>
+            <AboutMe
+              pageInfo={pages.filter((page) => page.slug === "about-me")[0]}
+            />
+          </section>
+          <hr />
+          {/* <BrewerySection
+            pageInfo={pages.filter((page) => page.slug === "the-brewery")[0]}
+          /> */}
         </div>
-        <h1>{siteSettings.siteTitle}</h1>
-        <h2>{siteSettings.subheading}</h2>
-
-        <Body />
         
-        <Projects projects={projects}/>
-
-        <Resume pageInfo={pages.filter((page) => page.slug === "resume")[0]} />
-        
-        <AboutMe
-          pageInfo={pages.filter((page) => page.slug === "about-me")[0]}
-        />
-
-        <BrewerySection pageInfo={pages.filter((page) => page.slug === "the-brewery")[0]}/>
-
-
-        <h2>placeholder</h2>
-        <p>Run the following in your terminal!</p>
-        <pre>
-          <code>
-            gatsby new [directory]
-            https://github.com/colbyfayock/gatsby-starter-sass
-          </code>
-        </pre>
-        <ul>
-          <li>Just a list item to test. Can you see me?</li>
-        </ul>
       </Container>
     </Layout>
   );
