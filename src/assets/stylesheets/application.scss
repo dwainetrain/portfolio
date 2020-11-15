@@ -7,6 +7,11 @@
 @import "components/__components";
 @import "pages/__pages";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5em;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -47,6 +52,11 @@ section:not(:first-child) {
 .content {
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 11em 1fr;
+  }
   justify-content: start;
   margin: 1em 3em 1em 3em;
 }

@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 const AboutMe = ({ pageInfo: { title, body, images } }) => {
   return (
-    <div id="about-me">
+    <div >
       <h1 className="section-header">{title}</h1>
       <div className="chapter">
         <div className="text">

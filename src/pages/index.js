@@ -64,17 +64,17 @@ const IndexPage = () => {
       </Helmet>
       <Container>
         <div className="sections">
-          <section>
+          <section id="projects">
             <Projects projects={projects} />
           </section>
           <hr />
-          <section>
+          <section   id="resume">
             <Resume
               pageInfo={pages.filter((page) => page.slug === "resume")[0]}
             />
           </section>
           <hr />
-          <section>
+          <section id="about-me">
             <AboutMe
               pageInfo={pages.filter((page) => page.slug === "about-me")[0]}
             />

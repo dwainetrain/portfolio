@@ -7,13 +7,13 @@ module.exports = {
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-anchor-links",
-      options: {
-        // larger negative number adds more space at the top of the page
-        offset: -99,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-anchor-links",
+    //   options: {
+    //     // larger negative number adds more space at the top of the page
+    //     offset: -99,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
