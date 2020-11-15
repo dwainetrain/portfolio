@@ -6,7 +6,6 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 const Nav = () => {
 
   return (
-    <div className="box">
       <ul className="nav">
         <li>
           <AnchorLink to="/#projects" title="Projects">
@@ -34,7 +33,6 @@ const Nav = () => {
           </Link>
         </li> */}
       </ul>
-    </div>
   );
 };
 

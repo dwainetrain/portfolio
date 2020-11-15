@@ -1,8 +1,6 @@
-.box {
-  width: 9em;
-}
-
 .nav {
+  width: 9em;
+
   visibility: hidden;
   @include breakpoint(lg) {
     visibility: visible;

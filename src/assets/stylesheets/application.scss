@@ -45,8 +45,8 @@ section:not(:first-child) {
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 11em 1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: start;
   margin: 1em 3em 1em 3em;
 }

@@ -29,8 +29,9 @@ const Layout = ({ children, pageName }) => {
       <div className="wrapper">
         {" "}
         <Header settings={settings} />
+        <Nav />
         <div className="content">
-          <Nav />
+          
           <main>{children}</main>
         </div>
         {/* <Portrait settings={settings}/> */}
