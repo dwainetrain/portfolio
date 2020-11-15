@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 
 const Projects = ({ projects }) => {
   return (
-    <div id="projects">
+    <div>
       <h2 className="section-header">Projects</h2>
       <div className="listings">
         {projects.map((project) => (

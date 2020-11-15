@@ -33,22 +33,22 @@ hr {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   font-size: 1.2em;
   line-height: 1.3em;
   color: $sanguine-brown;
   font-family: var(--font-secondary);
 
-  background-image: linear-gradient(
-    120deg,
-    $sanguine-brown 0%,
-    $sanguine-brown-faded 100%
-  );
-  background-repeat: no-repeat;
+  // background-image: linear-gradient(
+  //   120deg,
+  //   $sanguine-brown 0%,
+  //   $sanguine-brown-faded 100%
+  // );
+  // background-repeat: no-repeat;
 
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in;
-  background-size: 100% 0.04em;
+  // background-position: 0 88%;
+  // transition: background-size 0.25s ease-in;
+  // background-size: 100% 0.04em;
 
   &:hover {
     color: $blue-bayoux;

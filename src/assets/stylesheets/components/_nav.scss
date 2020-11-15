@@ -1,19 +1,21 @@
-.box {
-  width: 9em;
-}
-
 .nav {
+  width: 9em;
+
   visibility: hidden;
   @include breakpoint(lg) {
     visibility: visible;
   }
 
-  position: fixed; // See link
+  position: sticky;
+  top: 4rem;
+  align-self: start;
 
-  top: 4em; //to make it stick to the top of the screen
-  height: 100vh; // make the height equal to 100 view height
-  // transition-duration: 0.4s;
-  // transition-delay: 0.1s;
+  // position: fixed; // See link
+
+  // top: 4em; //to make it stick to the top of the screen
+  // height: 100vh; // make the height equal to 100 view height
+  // // transition-duration: 0.4s;
+  // // transition-delay: 0.1s;
 
   li {
     list-style: none;
@@ -28,14 +30,15 @@
   a {
     text-decoration: none;
     color: inherit;
-    background-image: initial;
-    background-repeat: no-repeat;
-    background-position: initial;
-    transition: initial;
-    background-size: initial;
+    transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
   }
 
   a:hover {
+    text-decoration: underline;
+    color: $sanguine-brown;
+  }
+
+  .active {
     text-decoration: underline;
     color: $sanguine-brown;
   }
