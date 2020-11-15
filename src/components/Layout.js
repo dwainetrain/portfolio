@@ -7,7 +7,7 @@ import "assets/stylesheets/application.scss";
 // Hook with graphql query for site settings stored in GraphCMS
 import useSiteSettings from "../hooks/use-siteSettings";
 
-import Header from "components/Header";
+import Header from "components/header/static";
 import Footer from "components/Footer";
 import Nav from "components/Nav";
 // import Portrait from "components/portrait/homepage"
