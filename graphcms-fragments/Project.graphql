@@ -1,0 +1,25 @@
+fragment Project on Project {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  title
+  slug
+  tags {
+    ... on Tag {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  description
+  body
+  richText {
+    ... on RichText {
+      raw
+      html
+      markdown
+      text
+    }
+  }
+}

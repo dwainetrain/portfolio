@@ -1,0 +1,17 @@
+fragment SiteSetting on SiteSetting {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  siteTitle
+  subheading
+  profileImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  copyrightLine
+}

@@ -1,0 +1,17 @@
+fragment Brew on Brew {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  title
+  slug
+  brewStage
+  whatsBrewing
+  tags {
+    ... on Tag {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}

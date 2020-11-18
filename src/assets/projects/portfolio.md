@@ -7,8 +7,11 @@ _I wanted to create a site that quickly showcased the projects I've worked on, a
 The Stack:
 
 - Gatsby
-- GraphCMS (trying out alternatives to the CMS like wordpress)
+
+- GraphCMS (trying out alternatives to the CMS like wordpress) Pulling images in from GraphCMS and then using gaatsby-image
+
 - SASS
+
 - Netlify with Gatsby intergration
 
 Pictures of designs here too.
