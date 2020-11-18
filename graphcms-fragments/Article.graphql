@@ -1,0 +1,17 @@
+fragment Article on Article {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  title
+  slug
+  description
+  body
+  tags {
+    ... on Tag {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}

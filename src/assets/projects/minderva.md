@@ -1,37 +1,49 @@
 ## A Language Learning Tool Built with React and Firebase
 
-_Introduction to the project, why you started creating it, a mention of its earlier versions. Your method. Goals, expected outcomes, the future. What I would do again, what I wouldn't do again. I'm a language learning enthusist_
+_Minderva is a language learning app that uses translatoin, text-to-speech and flashcards to help language learners collect and review vocabulary. I've had the idea for years and built a very basic version in vanilla javascript months before attempting it in React. This is just a short review of the app and the tech stack I used to create it._
 
 [Live Site](https://minderva-17770.web.app/) | [Github](https://github.com/dwainetrain/minderva)
 
-Minderva is a language learning app that uses translatoin, text-to-speech and flashcards to help language learners collect and review vocabulary. I've had the idea for years and built a very basic version in vanilla javascript months before attempting it in React. This is just a short review of the app and the tech stack I used to create it.
-
 Image of homepage:
 
-ReactJS Library: Helped with organizing this project. I could quickly organize into components and focus on their singular functionality. I built it off a create-react-app that I then later customized.
+Introduction: Learning Japanese I wanted a tool that would allow for quick translation of words and phrases, provide accurate pronunciation and also allow me to save the those translations for later review. It's out of this idea that Minderva was born. I first did some experiments with vanilla javascript before developing the tool finally in React with a Firebase Backend.
+
+Here's the tech stack:
+
+React: Using this library I could quickly organize the project into components and focus on their singular functionality. I built it off a create-react-app installation that I then later customized.
 
 Firebase Platform:
 
 - Cloud Firestore: A NoSQL database that uses JSON documents to store data. For the minimal amount of data I wanted to hold I thought this was a perfect fit.
 
-- Google Cloud Functions: The cloud functions make communicating with other Google services very straight forward. Since your account is linked within Firebase you can bypass many API authentication headaches. I also use Cloud Functions to create a default user profile whenever a new user sign's up.
+- Google Cloud Functions: The cloud functions make communicating with other Google services very straight forward. Since your account is linked within Firebase you can bypass many API authentication headaches. The cloud functions handle getting translations from Google Translate, and then passing that translation to Google Text-to-Speech, which creates an mp3 file that is then saved to storage. This allows for quick pronunciation retrival when a user is reviewing their saved translations. I also use Cloud Functions to create a default user profile whenever a new user signs up.
 
-- Google Translate: This API is used to translate words and phrases that the learner is interested in saving.
+- Google Translate: This API is used to translate words and phrases that the user enters.
 
-- Google Text-to-Speech: After translation, the user has the option to listen to and save audio translations.
+- Google Text-to-Speech: After translation, the user has the option to listen to and save an audio version.
 
-Chakra UI: Chakra UI puts acceessiblity first and provided an excellent foundation for the user interface. It allows for themeing, and it nicely customizable.
+Chakra UI: Chakra UI puts acceessiblity first and provided an excellent foundation for the user interface. It allows for themeing, and it nicely customizable. I really wanted to focus on the UX of the app, making its functions and actions clear.
 
-## The Process
+## My Development Process
 
-Built up from very basic concepts, that eventually became the app.
+I started very basic, with no styling or other concerns and just work on getting logic working. For instance for my very first version, I just wanted to get the most basic elements working.
 
-- It should
-- It should
+Version 0.01:
 
-Connecting to the API, using cloud functions and useEffect to retieve data.
+- It should display cards
+- It should add to cards
+- It should delete cards
+- It should edit cards
 
-Creating the Quiz:
+And from there I would add piece by piece the functionality I wanted to achieve. Certainly the project grew in complexity, and had to be split into seperate concerns, ie, ux/ui, backend, bugs.
+
+Overall this working process served me well and allowed me to complete the project in a short amount of time.
+
+## Unique Challenges
+
+Learning how to wield React and state management were the first real challenges. I decided to go all in on React Hooks and I'm glad I did. I found the code much less cluttered than with Class based components, and there was no functionality missed. Getting my head around certain concepts, like useEffect, took awhile, but after many applications I see the power of them.
+
+For instance, here's how I randomize the cards for the Quiz section of the site:
 
 ```javascript
 // Function to shuffle the cards
@@ -54,10 +66,8 @@ useEffect(() => {
 }, [cardCollection, quizReset]);
 ```
 
-Adding Cards:
-
-Card Collection:
+This makes it very easy to control the components rendering behaviour.
 
 ## In conclusion
 
-I made it, and now I want to make more things. But less things like my portfolio. **Cheers!**
+Overall I'm happy with the functionality of the app. I would love to take it further and inject it with personality and a few more ideas that have arisen from my research into language learning. So, it's a project that will stay on my radar and grow. 頑張ったね！

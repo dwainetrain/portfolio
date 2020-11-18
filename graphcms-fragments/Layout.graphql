@@ -1,0 +1,10 @@
+fragment Layout on Layout {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  title
+  slug
+  schema
+}
