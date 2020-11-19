@@ -6,5 +6,10 @@
   .chapter {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+  img {
+    filter: grayscale(100%);
   }
 }

@@ -1,18 +1,73 @@
-# Minderva
+## A Language Learning Tool Built with React and Firebase
 
-This project is called Minderva, it's very mindful of language learners needs. If you're learning a language there is much you need. You need pronunciation, you need speaking ability, you need listening and comprehension ability, you need writing and reading ability. Only with all these abilities will you truly master a language and make it your own. I have yet to make one my own because I just move forward learning other things. Why is time and memory and ability so limited. Isn't it better to look at your lot and say there, there is my lot.
+_Minderva is a language learning app that uses translatoin, text-to-speech and flashcards to help language learners collect and review vocabulary. I've had the idea for years and built a very basic version in vanilla javascript months before attempting it in React. This is just a short review of the app and the tech stack I used to create it._
+
+[Live Site](https://minderva-17770.web.app/) | [Github](https://github.com/dwainetrain/minderva)
+
+Image of homepage:
+
+Introduction: Learning Japanese I wanted a tool that would allow for quick translation of words and phrases, provide accurate pronunciation and also allow me to save the those translations for later review. It's out of this idea that Minderva was born. I first did some experiments with vanilla javascript before developing the tool finally in React with a Firebase Backend.
+
+Here's the tech stack:
+
+React: Using this library I could quickly organize the project into components and focus on their singular functionality. I built it off a create-react-app installation that I then later customized.
+
+Firebase Platform:
+
+- Cloud Firestore: A NoSQL database that uses JSON documents to store data. For the minimal amount of data I wanted to hold I thought this was a perfect fit.
+
+- Google Cloud Functions: The cloud functions make communicating with other Google services very straight forward. Since your account is linked within Firebase you can bypass many API authentication headaches. The cloud functions handle getting translations from Google Translate, and then passing that translation to Google Text-to-Speech, which creates an mp3 file that is then saved to storage. This allows for quick pronunciation retrival when a user is reviewing their saved translations. I also use Cloud Functions to create a default user profile whenever a new user signs up.
+
+- Google Translate: This API is used to translate words and phrases that the user enters.
+
+- Google Text-to-Speech: After translation, the user has the option to listen to and save an audio version.
+
+Chakra UI: Chakra UI puts acceessiblity first and provided an excellent foundation for the user interface. It allows for themeing, and it nicely customizable. I really wanted to focus on the UX of the app, making its functions and actions clear.
+
+## My Development Process
+
+I started very basic, with no styling or other concerns and just work on getting logic working. For instance for my very first version, I just wanted to get the most basic elements working.
+
+Version 0.01:
+
+- It should display cards
+- It should add to cards
+- It should delete cards
+- It should edit cards
+
+And from there I would add piece by piece the functionality I wanted to achieve. Certainly the project grew in complexity, and had to be split into seperate concerns, ie, ux/ui, backend, bugs.
+
+Overall this working process served me well and allowed me to complete the project in a short amount of time.
+
+## Unique Challenges
+
+Learning how to wield React and state management were the first real challenges. I decided to go all in on React Hooks and I'm glad I did. I found the code much less cluttered than with Class based components, and there was no functionality missed. Getting my head around certain concepts, like useEffect, took awhile, but after many applications I see the power of them.
+
+For instance, here's how I randomize the cards for the Quiz section of the site:
 
 ```javascript
-// Here's some code from that thing
-const punk = "Is dead.";
+// Function to shuffle the cards
+const shuffleCards = (cards) =>
+  cards
+    .map((a) => ({ sort: Math.random(), value: a }))
+    .sort((a, b) => a.sort - b.sort)
+    .map((a) => a.value);
 
-if (longLivePunk === true) {
-  return "bang";
-}
+// On loading the quiz, create a quiz object that shuffles the cards by an order number
+useEffect(() => {
+  const quizData = () => {
+    const cards = cardCollection.map((card, index) => {
+      return { order: index, ...card };
+    });
+    return shuffleCards(cards);
+  };
+
+  setQuizCards(quizData());
+}, [cardCollection, quizReset]);
 ```
 
-So there you have it. Let's try a link also [Qucik Jump](https://google.com). I wonder how all of this will look once parsed by the system at _GraphCMS_.
+This makes it very easy to control the components rendering behaviour.
 
 ## In conclusion
 
-I made it, and now I want to make more things. But less things like my portfolio. **Cheers!**
+Overall I'm happy with the functionality of the app. I would love to take it further and inject it with personality and a few more ideas that have arisen from my research into language learning. So, it's a project that will stay on my radar and grow. 頑張ったね！

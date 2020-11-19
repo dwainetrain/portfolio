@@ -3,7 +3,8 @@
   width: 10em;
   height: 10em;
   border-radius: 100%;
-  margin: 0 auto 1em;
+  grid-row: 2;
+  grid-template-columns: 1 / 2;
 
   img {
     width: 100%;
