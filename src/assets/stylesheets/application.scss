@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5em;
+  scroll-padding-top: 4em;
 }
 
 body {
@@ -38,6 +38,10 @@ section {
 
 section:not(:first-child) {
   padding-top: 0.75em;
+}
+
+.sections {
+  margin-top: 0.24em;
 }
 
 .section-header {

@@ -65,7 +65,6 @@ module.exports = {
     //     offset: -99,
     //   },
     // },
-
     {
       resolve: "gatsby-source-graphql",
       options: {

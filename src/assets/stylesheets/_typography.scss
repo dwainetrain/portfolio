@@ -61,8 +61,23 @@ body {
 
 h1 {
   font-family: var(--font-secondary);
-  font-weight: normal;
+  font-weight: 500;
   max-width: 10em;
+  color: $blue-bayoux;
+  margin-top: -10px;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_2 * $mod_1 * $min_font,
+    $mod_1 * $mod_2 * $mod_2 * $min_font
+  );
+}
+
+h2 {
+  font-family: var(--font-secondary);
+  font-weight: 200;
+  max-width: 20em;
   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
   @include fluid-type(
     $min_width,
@@ -72,16 +87,30 @@ h1 {
   );
 }
 
-h2 {
+h3 {
   font-family: var(--font-secondary);
-  font-weight: normal;
-  // max-width: 10em;
+  font-weight: 500;
   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
   @include fluid-type(
     $min_width,
     $max_width,
-    $mod_1 * $mod_1 * $min_font,
-    $mod_2 * $mod_2 * $min_font
+    $mod_2 * $mod_1 * $min_font,
+    $mod_1 * $mod_2 * $min_font
+  );
+}
+
+h4 {
+  font-family: var(--font-primary);
+  font-weight: 200;
+  color: $tundora;
+  max-width: 20em;
+  line-height: 1.2em;
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_2 * $mod_1 * $min_font,
+    $mod_1 * $mod_2 * $min_font
   );
 }
 
@@ -112,6 +141,8 @@ p {
   max-width: 35em;
   font-size: 0.75rem;
   color: $tundora;
+  line-height: 1rem;
+  margin: 1em 0;
 }
 
 /* End of example */
