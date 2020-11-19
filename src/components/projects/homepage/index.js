@@ -11,7 +11,7 @@ const Projects = ({ projects }) => {
       <div className="listings">
         {projects.map((project) => (
           <div key={project.id} className="listing">
-            <Link to={`/projects/${project.slug}`}>{project.title}</Link>
+            <h3><Link to={`/projects/${project.slug}`}>{project.title}</Link></h3>
             <div className="tags">
               {project.tags.map((tag, index) => {
                 return index + 1 !== project.tags.length

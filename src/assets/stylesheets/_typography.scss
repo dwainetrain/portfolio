@@ -67,15 +67,15 @@ h1 {
   @include fluid-type(
     $min_width,
     $max_width,
-    $mod_1 * $mod_1 * $mod_1 * $min_font,
-    $mod_2 * $mod_2 * $mod_2 * $min_font
+    $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $min_font
   );
 }
 
 h2 {
   font-family: var(--font-secondary);
   font-weight: normal;
-  max-width: 10em;
+  // max-width: 10em;
   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
   @include fluid-type(
     $min_width,
@@ -109,7 +109,7 @@ h2 {
 }
 
 p {
-  max-width: 25em;
+  max-width: 35em;
   font-size: 0.75rem;
   color: $tundora;
 }
