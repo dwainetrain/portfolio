@@ -1,6 +1,6 @@
-.nav {
+.navbar {
   width: 9em;
-
+  grid-row: 1 / 2;
   visibility: hidden;
   @include breakpoint(lg) {
     visibility: visible;
@@ -10,36 +10,38 @@
   top: 4rem;
   align-self: start;
 
-  // position: fixed; // See link
+  .nav {
+    // position: fixed; // See link
 
-  // top: 4em; //to make it stick to the top of the screen
-  // height: 100vh; // make the height equal to 100 view height
-  // // transition-duration: 0.4s;
-  // // transition-delay: 0.1s;
+    // top: 4em; //to make it stick to the top of the screen
+    // height: 100vh; // make the height equal to 100 view height
+    // // transition-duration: 0.4s;
+    // // transition-delay: 0.1s;
 
-  li {
-    list-style: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-    margin-bottom: 0.5em;
-    color: $tundora;
-  }
+    li {
+      list-style: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 300;
+      margin-bottom: 0.5em;
+      color: $tundora;
+    }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-    transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
-  }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+    }
 
-  a:hover {
-    text-decoration: underline;
-    color: $sanguine-brown;
-  }
+    a:hover {
+      text-decoration: underline;
+      color: $sanguine-brown;
+    }
 
-  .active {
-    text-decoration: underline;
-    color: $sanguine-brown;
+    .active {
+      text-decoration: underline;
+      color: $sanguine-brown;
+    }
   }
 }

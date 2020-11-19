@@ -3,6 +3,10 @@ require("dotenv").config({
 });
 
 module.exports = {
+  siteMetadata: {
+    title: `Dwaine Best`,
+    description: "Junior Front End Developer with a design and theatre background."
+  },
   plugins: [
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-sass",

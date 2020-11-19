@@ -8,9 +8,8 @@ import "assets/stylesheets/application.scss";
 import useSiteSettings from "../hooks/use-siteSettings";
 
 import Header from "components/header/static";
-import Footer from "components/Footer";
 import Nav from "components/Nav";
-// import Portrait from "components/portrait/homepage"
+import Portrait from "components/portrait/homepage";
 
 const Layout = ({ children, pageName }) => {
   const settings = useSiteSettings();
@@ -31,11 +30,12 @@ const Layout = ({ children, pageName }) => {
         <Header settings={settings} />
         <div className="content">
           <Nav />
+
           <main>{children}</main>
+          <Portrait settings={settings} />
         </div>
         {/* <Portrait settings={settings}/> */}
       </div>
-      <Footer />
     </>
   );
 };
