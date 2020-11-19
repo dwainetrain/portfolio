@@ -103,14 +103,14 @@ h4 {
   font-family: var(--font-primary);
   font-weight: 200;
   color: $tundora;
-  max-width: 20em;
+  max-width: 40em;
   line-height: 1.2em;
   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
   @include fluid-type(
     $min_width,
     $max_width,
-    $mod_2 * $mod_1 * $min_font,
-    $mod_1 * $mod_2 * $min_font
+    $mod_1 * $min_font,
+    $mod_2 * $min_font
   );
 }
 
@@ -137,12 +137,17 @@ h4 {
   letter-spacing: 0.1em;
 }
 
-p {
-  max-width: 35em;
-  font-size: 0.75rem;
+p,
+li {
+  max-width: 40em;
+  @include fluid-type($min_width, $max_width, $min_font, $min_font);
   color: $tundora;
   line-height: 1rem;
   margin: 1em 0;
+}
+
+pre {
+  @include fluid-type($min_width, $max_width, $min_font, $min_font);
 }
 
 /* End of example */

@@ -29,6 +29,7 @@ main {
   flex-direction: column;
   width: 100%;
   grid-row: 1 / span 2;
+  margin-top: 1em;
 }
 
 section {
@@ -38,10 +39,6 @@ section {
 
 section:not(:first-child) {
   padding-top: 0.75em;
-}
-
-.sections {
-  margin-top: 0.24em;
 }
 
 .section-header {
@@ -64,5 +61,28 @@ section:not(:first-child) {
     grid-template-rows: 1fr 200px;
   }
   justify-content: start;
-  margin: 1em 3em 1em 3em;
+  margin: 0em 3em 1em 3em;
+}
+
+// Project Template Specifics
+.project {
+  max-width: 40em;
+  // margin-top: 0.8em;
+  img {
+    border: solid 1px $gray-border;
+  }
+
+  pre {
+    max-width: 40em;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1em;
+    list-style-type: circle;
+  }
+
+  li > p {
+    max-width: 36em;
+  }
 }
