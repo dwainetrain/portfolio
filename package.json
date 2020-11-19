@@ -30,6 +30,7 @@
     "react-helmet": "^6.1.0",
     "react-markdown": "^5.0.2",
     "react-scrollspy": "^3.4.3",
+    "react-syntax-highlighter": "^15.3.0",
     "sass-loader": "^10.0.5",
     "scroll-data-hook": "^1.0.4",
     "webpack": "^5.4.0"
