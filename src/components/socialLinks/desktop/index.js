@@ -7,16 +7,16 @@ import EmailSVG from 'components/socialLinks/svgs/EmailSVG'
 
 const SocialLinks = () => {
     return(
-        <div class="social-links">
+        <div className="social-links">
             
             <div>
-                <a href="https://www.linkedin.com/in/dwainebest/"><LinkedinSVG /></a>
+                <a href="https://www.linkedin.com/in/dwainebest/" role="button" aria-label="LinkedIn Profile"><LinkedinSVG /></a>
+            </div>
+            <div> 
+            <a href="https://github.com/dwainetrain" role="button" aria-label="Github Profile"><GithubSVG /></a>
             </div>
             <div>
-            <a href="https://github.com/dwainetrain"><GithubSVG /></a>
-            </div>
-            <div>
-            <a href="mailto:dwaine.best@gmail.com"><EmailSVG /></a>
+            <a href="mailto:dwaine.best@gmail.com" role="button" aria-label="Email Contact"><EmailSVG /></a>
             </div>
         </div>
     )

@@ -1,24 +1,31 @@
 import React, { useState } from "react";
 
 import { Link } from "gatsby";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+// import { AnchorLink } from "gatsby-plugin-anchor-links";
+
+import Scrollspy from "react-scrollspy";
 
 import Chevron from "../components/Chevron";
 import Hamburger from "../components/Hamburger";
 
 const MobileMenu = () => {
-  const [active, setActive] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    setActive(!active);
+    setOpen(!open);
   };
 
   return (
-    <div className="mobile-menu">
-      <Link to="#" onClick={() => handleClick()}>
+    <Scrollspy
+      className="mobile-menu"
+      items={["projects", "resume", "about-me"]}
+      currentClassName="active"
+      offset={-160}
+    >
+      <button onClick={() => handleClick()}>
         <Hamburger />
-      </Link>
-      {active ? (
+      </button>
+      {open ? (
         <div
           className="overlay"
           onClick={() => handleClick()}
@@ -28,47 +35,45 @@ const MobileMenu = () => {
           aria-label="page overlay"
         ></div>
       ) : null}
-      <div className={`sidebar ${active ? "active" : null}`}>
+      <div className={`sidebar ${open ? "open" : null}`}>
         <div className="top">
           <h2>Menu</h2>
-          <Link
-            to="#"
+          <button
             onClick={() => handleClick()}
             aria-label="Sidebar menu toggle"
           >
             <Chevron />
-          </Link>
+          </button>
         </div>
-        {/* This is a hack since the onClick isn't working with the links in the list */}
         <ul>
           <li>
-            <AnchorLink to="/#projects" title="Projects" >
+            <Link to="/#projects" title="Projects" onClick={() => handleClick()}>
               Projects
-            </AnchorLink>
+            </Link>
           </li>
-          <li>
-            <AnchorLink to="/#articles" title="Articles">
+          {/* <li>
+            <Link to="/#articles" title="Articles">
               Articles
-            </AnchorLink>
-          </li>
+            </Link>
+          </li> */}
           <li>
-            <AnchorLink to="/#resume" title="My Resume">
+            <Link to="/#resume" title="My Resume" onClick={() => handleClick()}>
               Resume
-            </AnchorLink>
+            </Link>
           </li>
           <li>
-            <AnchorLink to="/#about-me" title="About Me">
+            <Link to="/#about-me" title="About Me" onClick={() => handleClick()}>
               About Me
-            </AnchorLink>
+            </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/the-brewery/" title="The Idea Brewery" >
               Brewery
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
-    </div>
+    </Scrollspy>
   );
 };
 

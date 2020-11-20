@@ -23,9 +23,6 @@ const pageQuery = graphql`{
 
 const AboutMe = ({ pageInfo: { title, body } }) => {
   const { content } = useStaticQuery(pageQuery);
-  console.log('Page Query: ', pageQuery)
-  console.log('Images: ', content);
-
   return (
     <div>
       <h1 className="section-header">{title}</h1>

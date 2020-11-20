@@ -1,7 +1,7 @@
 .mobile-menu {
-  visibility: visible;
+  display: initial;
   @include breakpoint(lg) {
-    visibility: hidden;
+    display: none;
   }
 
   .sidebar {
@@ -15,7 +15,7 @@
     z-index: 100;
   }
 
-  .active {
+  .open {
     right: 0;
   }
 
@@ -58,6 +58,16 @@
   }
 
   a:hover {
+    color: $sanguine-brown;
+  }
+
+  button {
+    border: 0;
+    background-color: initial;
+  }
+
+  .active {
+    text-decoration: underline;
     color: $sanguine-brown;
   }
 }

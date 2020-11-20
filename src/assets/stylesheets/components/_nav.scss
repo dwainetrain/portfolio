@@ -1,9 +1,9 @@
 .navbar {
   width: 9em;
   grid-row: 1 / 2;
-  visibility: hidden;
+  display: none;
   @include breakpoint(lg) {
-    visibility: visible;
+    display: block;
   }
 
   position: sticky;

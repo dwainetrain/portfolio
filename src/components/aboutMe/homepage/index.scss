@@ -4,9 +4,11 @@
   }
 
   .chapter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1em;
+    }
   }
 
   img {

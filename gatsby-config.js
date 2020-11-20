@@ -5,15 +5,28 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Dwaine Best`,
-    description: "Junior Front End Developer with a design and theatre background."
+    description:
+      "Junior Front End Developer with a design and theatre background.",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`
+      },
+    },
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-mdx',
+    "gatsby-plugin-mdx",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -73,5 +86,6 @@ module.exports = {
         url: process.env.GATSBY_GRAPHCMS_API,
       },
     },
+  
   ],
 };

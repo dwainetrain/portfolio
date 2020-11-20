@@ -54,22 +54,30 @@ section:not(:first-child) {
 .content {
   display: flex;
   flex-direction: column;
-
+  justify-content: flex-start;
+  margin: 0em 1em 1em 1em;
   @include breakpoint(lg) {
     display: grid;
     grid-template-columns: 11em 1fr;
     grid-template-rows: 1fr 200px;
   }
-  justify-content: start;
-  margin: 0em 3em 1em 3em;
+
+  @include breakpoint(md) {
+    margin: 0em 3em 1em 3em;
+  }
+  justify-content: flex-start;
 }
 
 // Project Template Specifics
 .project {
-  max-width: 40em;
+  max-width: 88vw;
   // margin-top: 0.8em;
   img {
     border: solid 1px $gray-border;
+  }
+
+  @include breakpoint(md) {
+    max-width: 40em;
   }
 
   pre {

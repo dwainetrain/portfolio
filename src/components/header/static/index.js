@@ -10,18 +10,12 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
   // Get scroll position and wrapper height for gradient effect
   const { position } = useScrollData();
   const [height, setHeight] = useState(0);
-  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const wrapperHeight = document.querySelector(".wrapper").clientHeight;
     setHeight(wrapperHeight);
-    window.addEventListener("resize", handleResize);
   }, []);
 
-  // Get width for Nav Breakpoint
-  const handleResize = (e) => {
-    setWidth(window.innerWidth);
-  };
 
   return (
     <header
@@ -35,7 +29,7 @@ const Header = ({ settings: { siteTitle, subheading } }) => {
           <div className="logo">
             <Link to="/">{siteTitle}</Link>
           </div>
-          {width <= 1024 ? <MobileMenu /> : null}
+          <MobileMenu />
         </div>
         <span className="subheading">{subheading}</span>
       </div>
