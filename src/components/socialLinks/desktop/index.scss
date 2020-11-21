@@ -4,4 +4,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   margin-top: 1em;
+
+  svg {
+    fill: #737987;
+  }
+
+  svg:hover {
+    fill: $blue-bayoux;
+  }
 }

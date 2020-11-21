@@ -1,11 +1,13 @@
 import React from "react";
 
+import ReactMarkdown from "react-markdown";
+
 const Resume = ({ pageInfo: { slug, title, body } }) => {
   return (
-    <div>
+    <div className="section-container">
       <h1 className="section-header">{title}</h1>
       <p>
-        <a href="/">{body}</a>
+        <ReactMarkdown source={body} linkTarget={"_blank"}/>
       </p>
     </div>
   );

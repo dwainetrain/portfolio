@@ -13,8 +13,8 @@ const Project = ({
   return (
     <Layout pageName="project">
       <div className="project">
-        <h1>{project.title}</h1>
-        <ReactMarkdown source={project.body} renderers={{ code: CodeBlock }} />
+        <h1>{project.title} <span className="designation">/ Project</span></h1>
+        <ReactMarkdown source={project.body} renderers={{ code: CodeBlock }} linkTarget={"_blank"}/>
       </div>
     </Layout>
   );

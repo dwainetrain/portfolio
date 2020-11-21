@@ -24,7 +24,7 @@ const pageQuery = graphql`{
 const AboutMe = ({ pageInfo: { title, body } }) => {
   const { content } = useStaticQuery(pageQuery);
   return (
-    <div>
+    <div className="section-container">
       <h1 className="section-header">{title}</h1>
       <div className="chapter">
         <div className="text">

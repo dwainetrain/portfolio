@@ -1,4 +1,4 @@
-import "../src/assets/stylesheets/global.scss";
+import "../src/assets/stylesheets/_global.scss";
 
 // Link fixing
 import { action } from "@storybook/addon-actions"

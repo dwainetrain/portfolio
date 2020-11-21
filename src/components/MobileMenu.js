@@ -16,12 +16,7 @@ const MobileMenu = () => {
   };
 
   return (
-    <Scrollspy
-      className="mobile-menu"
-      items={["projects", "resume", "about-me"]}
-      currentClassName="active"
-      offset={-160}
-    >
+    <div className="mobile-menu">
       <button onClick={() => handleClick()}>
         <Hamburger />
       </button>
@@ -45,9 +40,17 @@ const MobileMenu = () => {
             <Chevron />
           </button>
         </div>
-        <ul>
+        <Scrollspy
+          items={["projects", "resume", "about-me"]}
+          currentClassName="active"
+          offset={-170}
+        >
           <li>
-            <Link to="/#projects" title="Projects" onClick={() => handleClick()}>
+            <Link
+              to="/#projects"
+              title="Projects"
+              onClick={() => handleClick()}
+            >
               Projects
             </Link>
           </li>
@@ -62,7 +65,11 @@ const MobileMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#about-me" title="About Me" onClick={() => handleClick()}>
+            <Link
+              to="/#about-me"
+              title="About Me"
+              onClick={() => handleClick()}
+            >
               About Me
             </Link>
           </li>
@@ -71,9 +78,9 @@ const MobileMenu = () => {
               Brewery
             </Link>
           </li> */}
-        </ul>
+        </Scrollspy>
       </div>
-    </Scrollspy>
+    </div>
   );
 };
 

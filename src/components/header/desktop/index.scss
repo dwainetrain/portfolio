@@ -3,11 +3,13 @@ header {
 
   position: sticky;
   top: 0;
-
   z-index: 9999;
 
   .logo {
     font-family: var(--font-secondary);
+    // to compensate for a minor gap that
+    // I can't locate the cause of
+    margin-left: -0.1rem;
 
     a {
       background-image: initial;
@@ -16,9 +18,17 @@ header {
       transition: initial;
       background-size: initial;
     }
+
+    a:hover {
+      color: $thunder;
+    }
   }
 
   .links {
+    display: grid;
+    grid-template-columns: 80vw 1fr;
+    grid-gap: 0.2rem 0;
+
     padding: 0.5em 1em 0.5em 1em;
     @include breakpoint(sm) {
     }
@@ -48,6 +58,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
 
   .subheading {
@@ -62,6 +74,12 @@ header {
       $mod_1 * $min_font,
       $mod_1 * $min_font
     );
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    @include breakpoint(lg) {
+      grid-column: -1 / 2;
+      grid-row: 1 / 2;
+    }
   }
 
   background-image: rgb(250, 252, 253);
@@ -73,9 +91,25 @@ header {
   background-repeat: repeat-x;
   background-position: 0px 0px;
   background-color: #d1dbe1;
+
+  .mobileMenu {
+    grid-column: -1 / 2;
+    grid-row: 1 / 3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .socialLinks {
+    display: initial;
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
 }
 
-.header {
-  display: flex;
-  border: 1px solid $sanguine-brown;
-}
+// .header {
+//   display: flex;
+//   border: 1px solid $sanguine-brown;
+// }
