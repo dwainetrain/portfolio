@@ -10,6 +10,9 @@ Typography
 
 /* Adapted From this codepen https://codepen.io/matejlatin/pen/dEXQmG */
 
+// font-size: 62.5%;
+//
+
 :root {
   --font-primary: nunito, sans-serif;
   --font-secondary: gill-sans-nova, serif;
@@ -64,7 +67,9 @@ h1 {
   font-weight: 500;
   max-width: 10em;
   color: $blue-bayoux;
-  margin-top: -10px;
+  margin-top: -0.45rem;
+  // line-height: 1.4rem;
+  // border: 1px solid yellow;
   font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
   @include fluid-type(
     $min_width,
@@ -72,6 +77,7 @@ h1 {
     $mod_2 * $mod_1 * $min_font,
     $mod_1 * $mod_2 * $mod_2 * $min_font
   );
+  margin-left: -0.1rem;
 }
 
 h2 {

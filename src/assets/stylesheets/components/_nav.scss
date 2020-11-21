@@ -7,7 +7,7 @@
   }
 
   position: sticky;
-  top: 3rem;
+  top: 3.2rem;
   align-self: start;
 
   .nav {
@@ -34,7 +34,7 @@
       transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
     }
 
-    a:hover {
+    li:hover {
       text-decoration: underline;
       color: $sanguine-brown;
     }
