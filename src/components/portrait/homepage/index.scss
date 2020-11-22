@@ -1,11 +1,14 @@
 .portrait {
+  display: none;
+  @include breakpoint(lg) {
+    display: flex;
+  }
+
   overflow: hidden;
   width: 10em;
   height: 10em;
-  // border-radius: 100%;
   grid-row: 2;
   grid-template-columns: 1 / 2;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-left: -1.2rem;
