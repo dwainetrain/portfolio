@@ -7,6 +7,8 @@ const Portrait = ({ settings: { profileImage} }) => {
           <img
             src={profileImage.url}
             alt="Portrait of Dwaine Best"
+            width={profileImage.width}
+            height={profileImage.height}
           />
         </p>
     )

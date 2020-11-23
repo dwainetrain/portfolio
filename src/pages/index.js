@@ -43,6 +43,7 @@ const pageQuery = graphql`
         id
         title
         slug
+        description
         tags {
           id
           name
@@ -60,7 +61,9 @@ const IndexPage = () => {
   return (
     <Layout pageName="home">
       <Helmet>
-        <title>{siteSettings.siteTitle}</title>
+        <title>{siteSettings[0].siteTitle}</title>
+        <meta name="description" content={siteSettings[0].subheading} />
+        <html lang="en" />
       </Helmet>
       <Container>
         <div className="sections">
