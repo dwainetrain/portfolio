@@ -17,7 +17,7 @@ const MobileMenu = () => {
 
   return (
     <div className="mobile-menu">
-      <button onClick={() => handleClick()}>
+      <button onClick={() => handleClick()} aria-label="Mobile menu open">
         <Hamburger />
       </button>
       {open ? (
