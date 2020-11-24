@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 // For the matching gradient effect between the header and the wrapper
 // Takes scroll position and uses it to calculate background-position of gradient.
 import { useScrollData } from "scroll-data-hook";
-import MobileMenu from "../../MobileMenu";
+import MobileMenu from "../../../components/nav/mobile";
 import SocialLinks from "components/socialLinks/desktop";
 
 const Header = ({ settings: { siteTitle, subheading } }) => {

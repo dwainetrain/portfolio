@@ -1,9 +1,6 @@
 //  @import "header";
 @import "footer";
 @import "container";
-@import "body";
-@import "mobileMenu";
-@import "nav";
 // @import "projects";
 
 //
@@ -12,3 +9,5 @@
 @import "../../../components/portrait/homepage/";
 @import "../../../components/header/desktop/";
 @import "../../../components/socialLinks/desktop/";
+@import "../../../components/nav/desktop/";
+@import "../../../components/nav/mobile/";

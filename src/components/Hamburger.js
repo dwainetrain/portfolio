@@ -1,5 +1,5 @@
 import React from "react";
-
+// Hamburger SVG used for Mobile Menu
 const Hamburger = () => {
   return (
     <svg

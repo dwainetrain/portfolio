@@ -5,8 +5,8 @@ import { Link } from "gatsby";
 
 import Scrollspy from "react-scrollspy";
 
-import Chevron from "../components/Chevron";
-import Hamburger from "../components/Hamburger";
+import Chevron from "../../../components/Chevron";
+import Hamburger from "../../../components/Hamburger";
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
