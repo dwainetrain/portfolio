@@ -75,14 +75,6 @@ module.exports = {
         buildMarkdownNodes: true,
       },
     },
-    // TODO: Remove achorlinks from here and related package
-    // {
-    //   resolve: "gatsby-plugin-anchor-links",
-    //   options: {
-    //     // larger negative number adds more space at the top of the page
-    //     offset: -99,
-    //   },
-    // },
     {
       resolve: "gatsby-source-graphql",
       options: {

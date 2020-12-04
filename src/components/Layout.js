@@ -8,7 +8,7 @@ import "assets/stylesheets/application.scss";
 import useSiteSettings from "../hooks/use-siteSettings";
 
 import Header from "components/header/desktop";
-import Nav from "components/Nav";
+import Nav from "components/nav/desktop";
 import Portrait from "components/portrait/homepage";
 
 const Layout = ({ children, pageName }) => {
@@ -34,7 +34,6 @@ const Layout = ({ children, pageName }) => {
           <main>{children}</main>
           <Portrait settings={settings} />
         </div>
-        {/* <Portrait settings={settings}/> */}
       </div>
     </>
   );

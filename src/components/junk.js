@@ -1,4 +1,4 @@
-// from index.js in pages
+// from index.js in paages
 {/* <p>Testing GraphCMS Conntection:</p>
         <div>
           {pages.map(({ slug, ...pages }) => (
